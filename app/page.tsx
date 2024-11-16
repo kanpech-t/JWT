@@ -51,7 +51,7 @@ export default function Home() {
             </h1>
             <span>
               {`Welcome to my portfolio! . Here, you'll find my projects,
-              experiences, and the skills I’ve honed through years of coding,
+              experiences and the skills I’ve honed through years of coding,
               problem-solving, and collaboration.`}
             </span>
             <button className="w-[208px] h-[47px] bg-[#FF6464] text-white text-xl font-medium lg:self-start self-center">
