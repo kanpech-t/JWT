@@ -47,12 +47,12 @@ export default function Home() {
           {/* left block */}
           <div className="flex flex-col gap-10 lg:w-[506px] text-center lg:text-start">
             <h1 className="flex flex-col text-[44px] font-bold">
-              Hi, I'm Kanpech, a Software Developer
+              {` Hi, I'm Kanpech, a Software Developer`}
             </h1>
             <span>
-              Welcome to my portfolio! . Here, you'll find my projects,
+              {`Welcome to my portfolio! . Here, you'll find my projects,
               experiences, and the skills I’ve honed through years of coding,
-              problem-solving, and collaboration.
+              problem-solving, and collaboration.`}
             </span>
             <button className="w-[208px] h-[47px] bg-[#FF6464] text-white text-xl font-medium lg:self-start self-center">
               Download Resume
