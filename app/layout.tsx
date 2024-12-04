@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Heebo } from "next/font/google";
 
-import { Navbar } from "./_components/navbar";
-import { Footer } from "./_components/footer";
+// import { Navbar } from "./_components/navbar";
+// import { Footer } from "./_components/footer";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("min-h-dvh flex flex-col", heebo.className)}>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="flex-1">{children}</div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
