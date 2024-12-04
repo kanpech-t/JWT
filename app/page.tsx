@@ -8,6 +8,7 @@ export default function Home() {
   const [userRefCode, setUserRefCode] = useState("");
   const [userDisplayName, setUserDisplayName] = useState("");
   const [redeemCode, setRedeemCode] = useState("");
+  const [redirectURL, setRedirctURL] = useState("");
   const [magicLink, setMagicLink] = useState<string | null>(null);
   const [isPending, setIsPending] = useState(false);
 
@@ -21,7 +22,11 @@ export default function Home() {
         userDisplayName,
         redeemCode,
       });
-      setMagicLink(baseUrl + link);
+      setMagicLink(
+        baseUrl +
+          link +
+          (redirectURL !== "" ? `&redirectURL=${redirectURL}` : "")
+      );
     } catch (error) {
       console.error("Error generating magic link:", error);
     } finally {
@@ -48,7 +53,22 @@ export default function Home() {
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
         </div>
-
+        <div>
+          <label
+            htmlFor="redirectURL"
+            className="block text-sm font-medium text-gray-700"
+          >
+            redirectURL
+          </label>
+          <input
+            type="text"
+            id="redirectURL"
+            value={baseUrl}
+            onChange={(e) => setRedirctURL(e.target.value)}
+            placeholder="Enter Redirect URL"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
         <div>
           <label
             htmlFor="userRefCode"
