@@ -63,7 +63,7 @@ export default function Home() {
           <input
             type="text"
             id="redirectURL"
-            value={baseUrl}
+            value={redirectURL}
             onChange={(e) => setRedirctURL(e.target.value)}
             placeholder="Enter Redirect URL"
             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
