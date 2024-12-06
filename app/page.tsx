@@ -1,9 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { createPlayboardMagicRedeemLinkUrl } from "./action/sign-jwt";
 import { useState } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
   const [baseUrl, setBaseUrl] = useState("");
   const [userRefCode, setUserRefCode] = useState("");
   const [userDisplayName, setUserDisplayName] = useState("");
@@ -130,6 +133,16 @@ export default function Home() {
           {isPending ? "Generating..." : "Generate Magic Link"}
         </button>
       </form>
+      <button
+        type="submit"
+        disabled={!magicLink || magicLink !== ""}
+        onClick={() => {
+          router.push(magicLink ?? "");
+        }}
+        className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+      >
+        รับชมย้อนหลัง
+      </button>
 
       {magicLink && (
         <div className="mt-4">
